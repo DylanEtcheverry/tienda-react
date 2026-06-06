@@ -1,0 +1,59 @@
+
+/*Decoracion.css*/
+/* Responsive para tablets */
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 0.5rem 0;
+  }
+
+  .custom-navbar .search-form {
+    padding: 0.35rem 0.5rem;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-navbar .search-form .form-control {
+    font-size: 14px;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .custom-navbar .search-form .btn-outline-success {
+    font-size: 14px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .app-content {
+    padding: 2rem 1.25rem;
+    min-height: calc(100vh - 65px);
+  }
+  
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+
+  .app-content {
+    padding: 1.5rem 0.75rem;
+    min-height: calc(100vh - 60px);
+  }
+  /*Componentes.css*/
+ 
+  /* Responsive para tabletas */
+@media (max-width: 768px) {
+  .custom-navbar .nav-link {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+  .custom-navbar .nav-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem !important;
+  }
+}
+}

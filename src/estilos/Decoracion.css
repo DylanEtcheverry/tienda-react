@@ -1,0 +1,83 @@
+/*decoracion backgrounds y mas*/
+/*Navbar*/
+.custom-navbar {
+  background: linear-gradient(135deg, rgba(13, 34, 55, 0.98), rgba(26, 65, 85, 0.98));
+  border-bottom: 4px solid #2eaa7e;
+}
+
+.custom-navbar .navbar-brand {
+  color: #4cd9c0 !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-right: 2rem;
+  padding: 0;
+}
+
+.navbar-logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: #2eaa7e;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%234cd9c0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.custom-navbar .search-form {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.custom-navbar .search-form .form-control {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(46, 170, 126, 0.6);
+  color: #edf5f2;
+}
+
+.custom-navbar .search-form .form-control::placeholder {
+  color: rgba(237, 245, 242, 0.8);
+}
+
+.custom-navbar .search-form .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 0.2rem rgba(46, 170, 126, 0.35);
+}
+
+.custom-navbar .search-form .btn-outline-success {
+  background-color: rgba(46, 170, 126, 0.22);
+  border-color: #2eaa7e;
+  color: #edf5f2;
+  font-weight: 600;
+}
+
+.custom-navbar .search-form .btn-outline-success:hover {
+  background-color: #2eaa7e;
+  border-color: #2eaa7e;
+  color: #ffffff;
+}
+
+/*background*/
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0d2237 0%, #18435a 45%, #1f7a5d 100%);
+  background-attachment: fixed;
+  color: #edf5f2;
+}
+
+.app-content {
+  min-height: calc(100vh - 72px);
+  padding: 3rem 1.5rem;
+  background-image: radial-gradient(circle at top left, rgba(173, 216, 230, 0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(144, 238, 144, 0.12), transparent 28%);
+}
