@@ -6,11 +6,19 @@
 }
 
 .custom-navbar .navbar-brand {
-  color: #4cd9c0 !important;
+  color: #e1ffff !important;
   font-size: 1.3rem;
   font-weight: 700;
   margin-right: 2rem;
   padding: 0;
+}
+
+.custom-navbar .nav-link {
+  color: #4cd9c0 !important;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #2eaa7e !important;
 }
 
 .navbar-logo {
@@ -24,6 +32,33 @@
 
 .custom-navbar .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%234cd9c0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-cart-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.navbar-cart-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.cart-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding: 0 0.35rem;
+  margin-left: 0.4rem;
+  border-radius: 999px;
+  background: #2eaa7e;
+  color: #0d2237;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .custom-navbar .search-form {
@@ -72,7 +107,7 @@ body {
   margin: 0;
   background: linear-gradient(135deg, #0d2237 0%, #18435a 45%, #1f7a5d 100%);
   background-attachment: fixed;
-  color: #edf5f2;
+  color: #f7fcff;
 }
 
 .app-content {
@@ -80,4 +115,220 @@ body {
   padding: 3rem 1.5rem;
   background-image: radial-gradient(circle at top left, rgba(173, 216, 230, 0.15), transparent 30%),
     radial-gradient(circle at bottom right, rgba(144, 238, 144, 0.12), transparent 28%);
+}
+
+.pokemon-store {
+  padding-bottom: 3rem;
+}
+
+.welcome-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: #a5f3d9;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.welcome-title {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  margin-bottom: 1rem;
+  line-height: 1.05;
+  color: #f8fdff;
+}
+
+.welcome-line {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 760px;
+  margin: 0.75rem auto;
+  color: rgba(243, 252, 255, 0.92);
+}
+
+.welcome-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f7fcff;
+}
+
+.section-header p {
+  margin: 0;
+  color: rgba(245, 255, 255, 0.88);
+}
+
+.type-group h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #c8f7e1;
+}
+
+.pokemon-card {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(16, 41, 68, 0.96), rgba(15, 38, 62, 0.95));
+  color: #f7fcff;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(18px);
+}
+
+.pokemon-card .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pokemon-card .card-title,
+.pokemon-card .card-title a,
+.pokemon-card .card-title span {
+  color: #ffffff;
+}
+
+.pokemon-description {
+  color: rgba(255, 255, 255, 0.96);
+  min-height: 4.5rem;
+}
+
+.pokemon-type-badge {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.pokemon-card .card-footer strong {
+  color: #ffffff;
+}
+
+.empty-cart-body h5 {
+  color: #ffffff;
+}
+
+.empty-cart-body p {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.cart-card,
+.form-card {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(10, 30, 53, 0.96), rgba(16, 41, 68, 0.92));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-card .form-label,
+.form-card .form-group label,
+.form-card .form-text {
+  color: #f7fcff;
+}
+
+.form-card .form-control {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.form-card .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-card .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(46, 170, 126, 0.8);
+  box-shadow: 0 0 0 0.2rem rgba(46, 170, 126, 0.15);
+}
+
+.cart-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+}
+
+.cart-item h6,
+.cart-item small,
+.cart-total,
+.cart-total strong,
+.cart-quantity {
+  color: #ffffff;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-total {
+  font-size: 1.15rem;
+}
+
+.empty-cart-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.empty-cart-emoji {
+  font-size: 3rem;
+}
+
+.empty-cart-body h5 {
+  margin-bottom: 0.5rem;
+}
+
+.empty-cart-body p,
+.empty-cart-text {
+  color: #ffffff;
+}
+
+.welcome-card {
+  background: rgba(46, 170, 126, 0.14);
+  border: 1px solid rgba(46, 170, 126, 0.35);
+  padding: 1rem 1.2rem;
+  border-radius: 0.9rem;
+}
+
+.form-message {
+  color: #b5f3ca;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 2rem 1.25rem;
+    min-height: calc(100vh - 65px);
+  }
+
+  .welcome-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+
+  .app-content {
+    padding: 1.5rem 0.75rem;
+    min-height: calc(100vh - 60px);
+  }
+
+  .custom-navbar .nav-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem !important;
+  }
 }
