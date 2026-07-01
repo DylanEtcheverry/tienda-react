@@ -62,11 +62,11 @@ export default function ProductDetailPage() {
                 <h3 className="mb-3">Detalles</h3>
                 <div className="mb-3">
                   <h5>Precio</h5>
-                  <p className="h4">${pokemon.price}</p>
+                  <p className="h4 text-white">${pokemon.price}</p>
                 </div>
                 <div className="mb-3">
                   <h5>Tipo</h5>
-                  <p>{pokemon.type}</p>
+                  <p className="text-white">{pokemon.type}</p>
                 </div>
               </div>
 
@@ -94,8 +94,8 @@ export default function ProductDetailPage() {
               </div>
 
               <div className="mb-3">
-                <p className="text-muted">
-                  Total: <strong>${pokemon.price * quantity}</strong>
+                <p className="text-white">
+                  Total: <strong className="text-white">${pokemon.price * quantity}</strong>
                 </p>
               </div>
 
