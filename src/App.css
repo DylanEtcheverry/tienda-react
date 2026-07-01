@@ -1,5 +1,4 @@
 /* Importar estilos organizados desde App.css */
-@import './estilos/Componentes.css';
 @import './estilos/Decoracion.css';
 @import './estilos/Responsive.css';
 

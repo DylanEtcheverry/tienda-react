@@ -1,101 +1,32 @@
-import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { CartProvider } from './context/CartContext'
+import NavBar from './componentes/Navbar'
+import HomePage from './pages/HomePage'
+import ShopPage from './pages/ShopPage'
+import ProductDetailPage from './pages/ProductDetailPage'
+import CartPage from './pages/CartPage'
+import CheckoutPage from './pages/CheckoutPage'
+import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import './App.css'
-import Navbar from './componentes/Navbar'
-import PokemonStore from './componentes/PokemonStore'
 
 function App() {
-  const [activeView, setActiveView] = useState('shop')
-  const [cart, setCart] = useState(() => {
-    const savedCart = localStorage.getItem('pokemonCart')
-    return savedCart ? JSON.parse(savedCart) : {}
-  })
-
-  // Guardar carrito en localStorage cada vez que cambia
-  useEffect(() => {
-    localStorage.setItem('pokemonCart', JSON.stringify(cart))
-  }, [cart])
-
-  const addToCart = (pokemon) => {
-    setCart((current) => {
-      const existing = current[pokemon.id]
-      const nextQuantity = existing ? Math.min(existing.quantity + 1, 99) : 1
-      return {
-        ...current,
-        [pokemon.id]: {
-          pokemon,
-          quantity: nextQuantity,
-        },
-      }
-    })
-  }
-
-  const incrementCartItem = (id) => {
-    setCart((current) => {
-      const item = current[id]
-      if (!item || item.quantity >= 99) return current
-      return {
-        ...current,
-        [id]: {
-          ...item,
-          quantity: item.quantity + 1,
-        },
-      }
-    })
-  }
-
-  const decrementCartItem = (id) => {
-    setCart((current) => {
-      const item = current[id]
-      if (!item || item.quantity <= 1) return current
-      return {
-        ...current,
-        [id]: {
-          ...item,
-          quantity: item.quantity - 1,
-        },
-      }
-    })
-  }
-
-  const removeFromCart = (id) => {
-    setCart((current) => {
-      const item = current[id]
-      if (!item) return current
-      if (item.quantity === 1) {
-        const next = { ...current }
-        delete next[id]
-        return next
-      }
-      return {
-        ...current,
-        [id]: {
-          ...item,
-          quantity: item.quantity - 1,
-        },
-      }
-    })
-  }
-
-  const cartCount = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0)
-
   return (
-    <>
-      <Navbar
-        cartCount={cartCount}
-        onSection={setActiveView}
-      />
-      <main className="app-content">
-        <PokemonStore
-          activeView={activeView}
-          onSection={setActiveView}
-          cart={cart}
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
-          incrementCartItem={incrementCartItem}
-          decrementCartItem={decrementCartItem}
-        />
-      </main>
-    </>
+    <CartProvider>
+      <Router>
+        <NavBar />
+        <main className="app-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/shop" element={<ShopPage />} />
+            <Route path="/product/:id" element={<ProductDetailPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/order-confirmation/:orderId" element={<OrderConfirmationPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+      </Router>
+    </CartProvider>
   )
 }
 
