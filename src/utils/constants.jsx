@@ -8,6 +8,7 @@ export const pokemons = [
     description: 'Un amigo energético que ilumina cualquier compra con chispa y velocidad.',
     price: 890,
     fullDescription: 'Pikachu es el Pokémon más icónico de todos. Con su poder eléctrico, puede generar descargas de hasta 100,000 voltios. Es rápido, ágil y siempre está listo para la acción. Perfecto para entrenadores que buscan velocidad y potencia.',
+    image: 'pikachu.png',
   },
   {
     id: 'charmander',

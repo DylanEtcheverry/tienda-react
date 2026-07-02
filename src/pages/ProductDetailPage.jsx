@@ -48,6 +48,15 @@ export default function ProductDetailPage() {
                   {pokemon.type}
                 </Badge>
               </div>
+              {pokemon.image && (
+                <div className="text-center my-3">
+                  <img 
+                    src={new URL(`../assets/pokemons/${pokemon.image}`, import.meta.url).href} 
+                    alt={pokemon.name}
+                    style={{ maxWidth: '100%', height: 'auto', maxHeight: '300px' }}
+                  />
+                </div>
+              )}
               <Card.Text className="pokemon-description flex-grow-1 mt-3">
                 {pokemon.fullDescription}
               </Card.Text>

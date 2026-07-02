@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Badge, Button, Card, Col, Container, Row } from 'react-bootstrap'
 
-export default function ShopProductList({ pokemons, typeColors, onAddToCart }) {
+export default function ShopProductList({ pokemons, typeColors, onAddToCart, selectedCategory }) {
   return (
     <Container className="pokemon-store">
       <section className="welcome-section" id="bienvenida">
@@ -20,8 +20,20 @@ export default function ShopProductList({ pokemons, typeColors, onAddToCart }) {
 
       <section className="shop-section" id="tienda">
         <div className="section-header">
-          <h2>Explora nuestros Pokémon</h2>
-          <p>Todos los Pokémon juntos, uno al lado del otro, para elegir rápido.</p>
+          <div className="d-flex align-items-center justify-content-between mb-3">
+            <div>
+              <h2>Explora nuestros Pokémon</h2>
+              <p>Todos los Pokémon juntos, uno al lado del otro, para elegir rápido.</p>
+            </div>
+            {selectedCategory && (
+              <div className="d-flex align-items-center gap-2">
+                <span>Filtrando por:</span>
+                <Badge bg={typeColors[selectedCategory] || 'secondary'} className="pokemon-type-badge">
+                  {selectedCategory}
+                </Badge>
+              </div>
+            )}
+          </div>
         </div>
 
         <Row xs={1} md={2} lg={3} className="g-4">
